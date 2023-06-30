@@ -213,7 +213,19 @@ const vis: CollapsibleTreeVisualization = {
         .style('cursor', 'pointer')
         .style('font-family', "'Open Sans', Helvetica, sans-serif")
         .style('font-size', textSize + 'px')
-        .text((d: any) => { return d.data.name })
+        .text(
+          (d: any) => { 
+            const distance = d.y - (d.parent?.y || 0)
+            const charSize = (parseFloat(getComputedStyle(element).fontSize) / 3) || 3
+
+            let maxCharWidth = Math.floor(distance / charSize);
+            if(maxCharWidth === 0) {
+                return d.data.name
+            }
+            
+            maxCharWidth -= 4
+            return `<title>${d.data.name}</title> ${d.data.name.substr(0, maxCharWidth)} ${d.data.name.length > maxCharWidth ? ' ...' : ''}`
+          })
         .on('click', (d: any) => { 
          LookerCharts.Utils.openDrillMenu({
             links: linkMap.get(d.data.name),
