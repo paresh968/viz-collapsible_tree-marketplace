@@ -1,36 +1,10 @@
 import * as d3 from 'd3';
 
-import { VisConfig, VisQueryResponse, VisualizationDefinition } from './types';
+import {VisConfig, VisQueryResponse, VisualizationDefinition} from './types';
+import {fromSheetsToD3Format} from './currency_formatter';
 
 export const formatType = (valueFormat: string) => {
-  if (!valueFormat) return undefined;
-  let format = '';
-  switch (valueFormat.charAt(0)) {
-    case '$':
-      format += '$';
-      break;
-    case '£':
-      format += '£';
-      break;
-    case '€':
-      format += '€';
-      break;
-  }
-  if (valueFormat.indexOf(',') > -1) {
-    format += ',';
-  }
-  const splitValueFormat = valueFormat.split('.');
-  format += '.';
-  format += splitValueFormat.length > 1 ? splitValueFormat[1].length : 0;
-
-  switch (valueFormat.slice(-1)) {
-    case '%':
-      format += '%';
-      break;
-    case '0':
-      format += 'f';
-      break;
-  }
+  const format = fromSheetsToD3Format(valueFormat);
   return d3.format(format);
 };
 
@@ -52,7 +26,7 @@ export const handleErrors = (
         title: `Not Enough ${noun}s`,
         message: `This visualization requires ${
           min === max ? 'exactly' : 'at least'
-          } ${min} ${noun.toLowerCase()}${min === 1 ? '' : 's'}.`,
+        } ${min} ${noun.toLowerCase()}${min === 1 ? '' : 's'}.`,
         group,
       });
       return false;
@@ -62,7 +36,7 @@ export const handleErrors = (
         title: `Too Many ${noun}s`,
         message: `This visualization requires ${
           min === max ? 'exactly' : 'no more than'
-          } ${max} ${noun.toLowerCase()}${min === 1 ? '' : 's'}.`,
+        } ${max} ${noun.toLowerCase()}${min === 1 ? '' : 's'}.`,
         group,
       });
       return false;
@@ -71,7 +45,7 @@ export const handleErrors = (
     return true;
   };
 
-  const { pivots, dimensions, measure_like: measures } = res.fields;
+  const {pivots, dimensions, measure_like: measures} = res.fields;
 
   return (
     check(
