@@ -2,7 +2,7 @@
 declare var looker: Looker
 
 import * as d3 from 'd3'
-import { handleErrors } from '../utils'
+import { getEllipsizedText, handleErrors } from '../utils'
 
 import {
   Row,
@@ -215,16 +215,8 @@ const vis: CollapsibleTreeVisualization = {
         .style('font-size', textSize + 'px')
         .text(
           (d: any) => { 
-            const distance = d.y - (d.parent?.y || 0)
-            const charSize = (parseFloat(getComputedStyle(element).fontSize) / 3) || 3
-
-            let maxCharWidth = Math.floor(distance / charSize);
-            if(maxCharWidth === 0) {
-                return d.data.name
-            }
-            
-            maxCharWidth -= 4
-            return `<title>${d.data.name}</title> ${d.data.name.substr(0, maxCharWidth)} ${d.data.name.length > maxCharWidth ? ' ...' : ''}`
+            const ellipsizedText = getEllipsizedText(d.data.name, d.y, d.parent?.y, textSize)
+            return `<title>${d.data.name}</title> ${ellipsizedText}`
           })
         .on('click', (d: any) => { 
          LookerCharts.Utils.openDrillMenu({
