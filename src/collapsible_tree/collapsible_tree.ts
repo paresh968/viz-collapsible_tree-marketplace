@@ -2,7 +2,8 @@
 declare var looker: Looker
 
 import * as d3 from 'd3'
-import { getEllipsizedText, handleErrors } from '../utils'
+import { getEllipsizedText } from '../text'
+import { handleErrors } from '../utils'
 
 import {
   Row,

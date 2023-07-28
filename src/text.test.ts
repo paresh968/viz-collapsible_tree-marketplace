@@ -1,0 +1,12 @@
+import {expect, describe, test} from '@jest/globals';
+import { getEllipsizedText } from './text';
+
+describe('getEllipsizedText', () => {
+    test('should ellipsize long text', () => {
+      expect(getEllipsizedText('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, laudantium!', 200, 100, 16)).toMatch(/\.{3}$/)
+    });
+
+    test('should not ellipsize short text', () => {
+        expect(getEllipsizedText('Lorem ipsum dolor sit amet', 500, 100, 16)).toBe('Lorem ipsum dolor sit amet')
+      });
+  });
