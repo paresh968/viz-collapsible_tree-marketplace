@@ -220,7 +220,7 @@ const vis: CollapsibleTreeVisualization = {
         .style('cursor', 'pointer')
         .style('font-family', "'Open Sans', Helvetica, sans-serif")
         .style('font-size', textSize + 'px')
-        .text((d: any) => {
+        .html((d: any) => {
           const ellipsizedText = getEllipsizedText(
             d.data.name,
             d.y,
