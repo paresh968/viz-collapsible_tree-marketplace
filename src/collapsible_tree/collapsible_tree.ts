@@ -227,7 +227,7 @@ const vis: CollapsibleTreeVisualization = {
             d.parent?.y,
             textSize
           );
-          return `<title>${d.data.name}</title> ${ellipsizedText}`;
+          return `<title>${d.data.name}</title>${ellipsizedText}`;
         })
         .on('click', (d: any) => {
           LookerCharts.Utils.openDrillMenu({
