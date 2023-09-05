@@ -2,6 +2,7 @@
 declare var looker: Looker;
 
 import * as d3 from 'd3';
+import {getEllipsizedText} from '../text';
 import {handleErrors} from '../utils';
 
 import {
@@ -219,8 +220,14 @@ const vis: CollapsibleTreeVisualization = {
         .style('cursor', 'pointer')
         .style('font-family', "'Open Sans', Helvetica, sans-serif")
         .style('font-size', textSize + 'px')
-        .text((d: any) => {
-          return d.data.name;
+        .html((d: any) => {
+          const ellipsizedText = getEllipsizedText(
+            d.data.name,
+            d.y,
+            d.parent?.y,
+            textSize
+          );
+          return `<title>${d.data.name}</title>${ellipsizedText}`;
         })
         .on('click', (d: any) => {
           LookerCharts.Utils.openDrillMenu({
