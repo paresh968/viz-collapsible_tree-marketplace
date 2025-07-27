@@ -1,13 +1,12 @@
 {
   "name": "Collapsible Tree",
   "description": "A custom collapsible tree visualization",
-  "author": "Paresh Pawar",
+  "id": "collapsible_tree",
   "organization": "Paresh 968",
   "version": "1.0",
   "components": {
     "visualization": {
       "script": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
-      "css": "",
       "useSandbox": false
     }
   }
