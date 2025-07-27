@@ -7,8 +7,8 @@
   "components": {
     "visualization": {
       "script": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
-      "css": "",  // Optional, leave empty if not used
-      "useSandbox": false  // true if you are loading iframe-based viz
+      "css": "",
+      "useSandbox": false
     }
   }
 }
