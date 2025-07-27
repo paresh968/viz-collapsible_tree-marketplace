@@ -1,9 +1,14 @@
 {
-  "visualization": {
-    "id": "collapsible_tree",
-    "label": "Collapsible Tree",
-    "type": "community_visualization",
-    "jsUrl": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
-    "supportCustomConfig": false
+  "name": "Collapsible Tree",
+  "description": "A custom collapsible tree visualization",
+  "author": "Paresh Pawar",
+  "organization": "Paresh 968",
+  "version": "1.0",
+  "components": {
+    "visualization": {
+      "script": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
+      "css": "",  // Optional, leave empty if not used
+      "useSandbox": false  // true if you are loading iframe-based viz
+    }
   }
 }
