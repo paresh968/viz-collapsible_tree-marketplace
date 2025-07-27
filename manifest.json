@@ -1,10 +1,14 @@
 {
-  "id": "collapsible_tree",
   "name": "Collapsible Tree",
-  "description": "Zoomable collapsible tree with filter interactions",
-  "resource": {
-    "js": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
-    "config": "https://storage.googleapis.com/my_looker_studio_visulizations/viz-config.json",
-    "css": ""
+  "description": "A custom collapsible tree visualization",
+  "author": "Paresh Pawar",
+  "organization": "Paresh 968",
+  "version": "1.0",
+  "components": {
+    "visualization": {
+      "script": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
+      "css": "",
+      "useSandbox": false
+    }
   }
 }
