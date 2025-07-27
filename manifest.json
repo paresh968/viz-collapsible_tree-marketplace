@@ -1,17 +1,14 @@
-project_name: "viz-collapsible_tree-marketplace"
-
-constant: VIS_LABEL {
-  value: "Collapsible Tree"
-  export: override_optional
-}
-
-constant: VIS_ID {
-  value: "collapsible_tree-marketplace"
-  export:  override_optional
-}
-
-visualization: {
-  id: "@{VIS_ID}"
-  url: "https://paresh968.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
-  label: "@{VIS_LABEL}"
+{
+  "name": "collapsible_tree",
+  "vendor": "paresh968",
+  "version": "1",
+  "description": "Custom collapsible tree visualization for Looker Studio",
+  "resources": [
+    {
+      "type": "js",
+      "url": "https://paresh968.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
+    }
+  ],
+  "style": "auto",
+  "components": ["viz"]
 }
