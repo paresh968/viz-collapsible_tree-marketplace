@@ -1,7 +1,8 @@
 {
   "name": "Collapsible Tree",
+  "id": "collapsible_tree", 
   "description": "A custom collapsible tree visualization",
-  "id": "collapsible_tree",
+  "author": "Paresh Pawar",
   "organization": "Paresh 968",
   "version": "1.0",
   "components": {
