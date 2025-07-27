@@ -2,8 +2,6 @@
   "id": "collapsible_tree",
   "name": "Collapsible Tree",
   "description": "Zoomable collapsible tree with filter interactions",
-  "iconUrl": "",  // Optional
-  "infoUrl": "",  // Optional
   "resource": {
     "js": "https://storage.googleapis.com/my_looker_studio_visulizations/collapsible_tree.js",
     "config": "https://storage.googleapis.com/my_looker_studio_visulizations/viz-config.json",
