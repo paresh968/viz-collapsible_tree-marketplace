@@ -1,14 +1,19 @@
 {
-  "name": "collapsible_tree",
-  "vendor": "paresh968",
-  "version": "1",
-  "description": "Custom collapsible tree visualization for Looker Studio",
-  "resources": [
+  "name": "collapsible_tree_viz",
+  "organization": "paresh968",
+  "description": "Collapsible Tree for Looker Studio",
+  "logoUrl": "",
+  "packageUrl": "",
+  "supportUrl": "",
+  "devMode": true,
+  "components": [
     {
-      "type": "js",
-      "url": "https://paresh968.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
+      "id": "collapsible_tree",
+      "name": "Collapsible Tree",
+      "description": "Render tree chart",
+      "resource": {
+        "js": "https://paresh968.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
+      }
     }
-  ],
-  "style": "auto",
-  "components": ["viz"]
+  ]
 }
