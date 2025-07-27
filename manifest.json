@@ -12,6 +12,6 @@ constant: VIS_ID {
 
 visualization: {
   id: "@{VIS_ID}"
-  url: "https://your-username.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
+  url: "https://paresh968.github.io/viz-collapsible_tree-marketplace/collapsible_tree.js"
   label: "@{VIS_LABEL}"
 }
